@@ -53,3 +53,5 @@ VOLUME /var/www/html/pub
 ADD crontab /etc/cron.d/magento2-cron
 RUN chmod 0644 /etc/cron.d/magento2-cron
 RUN crontab -u www-data /etc/cron.d/magento2-cron
+RUN sed -i 's/www-data/root/g' /etc/apache2/apache2.conf
+
